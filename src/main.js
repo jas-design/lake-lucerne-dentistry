@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('header');
     const mainNav = document.getElementById('main-nav');
     const topBar = document.getElementById('top-bar');
-    
+
     if (header && mainNav) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
@@ -63,18 +63,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const content = btn.nextElementSibling;
             const iconPlus = btn.querySelector('.lucide-plus');
             const iconMinus = btn.querySelector('.lucide-minus');
-            
+
             const isOpen = !content.classList.contains('hidden');
-            
+
             // Close all
             document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
-            document.querySelectorAll('.lucide-minus').forEach(m => m?.classList.add('hidden'));
-            document.querySelectorAll('.lucide-plus').forEach(p => p?.classList.remove('hidden'));
-            
+            document.querySelectorAll('.lucide-minus').forEach(m => m ? .classList.add('hidden'));
+            document.querySelectorAll('.lucide-plus').forEach(p => p ? .classList.remove('hidden'));
+
             if (!isOpen) {
                 content.classList.remove('hidden');
-                iconPlus?.classList.add('hidden');
-                iconMinus?.classList.remove('hidden');
+                iconPlus ? .classList.add('hidden');
+                iconMinus ? .classList.remove('hidden');
             }
         });
     });
@@ -181,7 +181,7 @@ function initHeroSlider() {
 function initTestimonialCarousel() {
     const track = document.getElementById('testimonial-track');
     const dotsContainer = document.getElementById('testimonial-dots');
-    
+
     if (!track || !dotsContainer) return;
 
     const slides = Array.from(track.children);
@@ -206,10 +206,10 @@ function initTestimonialCarousel() {
     function updateCarousel(index) {
         currentIndex = index;
         const isDesktop = window.innerWidth >= 768;
-        const offset = currentIndex * (isDesktop ? 100 : 100); 
+        const offset = currentIndex * (isDesktop ? 100 : 100);
         // Actually on mobile each is 100%, on desktop 100% moves 2 slides (since container is max-w and slides are 50%)
         track.style.transform = `translateX(-${offset}%)`;
-        
+
         // Update dots
         const dots = dotsContainer.querySelectorAll('.dot');
         dots.forEach((dot, i) => {
@@ -266,7 +266,7 @@ function injectSharedComponents() {
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between items-center h-16">
                         <a href="index.html" class="flex items-center">
-                            <img src="images/logo.png" alt="Lake Lucerne Cosmetic & Implant Dentistry" class="max-w-[150px] w-auto transition-all" id="logo-img">
+                            <img src="images/logo.jpg" alt="Lake Lucerne Cosmetic & Implant Dentistry" class="max-w-[150px] w-auto transition-all" id="logo-img">
                         </a>
                         
                         <div class="hidden lg:flex items-center space-x-10">
@@ -306,7 +306,7 @@ function injectSharedComponents() {
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
                     <div class="space-y-8">
                         <a href="index.html" class="flex items-center">
-                            <img src="images/logo.png" alt="Lake Lucerne Cosmetic & Implant Dentistry" class="max-w-[150px] w-auto brightness-0 invert">
+                            <img src="images/logo.jpg" alt="Lake Lucerne Cosmetic & Implant Dentistry" class="max-w-[150px] w-auto brightness-0 invert">
                         </a>
                         <p class="text-gray-400 leading-relaxed text-sm">Providing exceptional dental care for the Orlando community for over 50 years. Our commitment is to your smile and long-term oral health.</p>
                         <div class="flex items-center space-x-4">
