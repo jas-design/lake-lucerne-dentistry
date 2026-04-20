@@ -266,7 +266,7 @@ function injectSharedComponents() {
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between items-center h-16">
                         <a href="index.html" class="flex items-center">
-                            <img src="/images/logo.png" alt="Lake Lucerne" class="h-12 w-auto transition-all" id="logo-img" onerror="this.src='https://ui-avatars.com/api/?name=LL&background=A4C77B&color=fff'">
+                            <img src="images/logo.png" alt="Lake Lucerne" class="h-12 w-auto transition-all" id="logo-img" onerror="this.src='https://ui-avatars.com/api/?name=LL&background=A4C77B&color=fff'">
                             <div class="ml-3 flex flex-col">
                                 <span class="font-serif text-2xl font-bold tracking-tight text-accent italic leading-none">Lake Lucerne</span>
                                 <span class="text-[9px] uppercase tracking-[0.2em] font-bold text-primary mt-1">Implant Dentistry</span>
@@ -310,7 +310,7 @@ function injectSharedComponents() {
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
                     <div class="space-y-8">
                         <a href="index.html" class="flex items-center">
-                            <img src="/images/logo.png" alt="Lake Lucerne" class="h-10 w-auto brightness-0 invert" onerror="this.src='https://ui-avatars.com/api/?name=LL&background=fff&color=0f172a'">
+                            <img src="images/logo.png" alt="Lake Lucerne" class="h-10 w-auto brightness-0 invert" onerror="this.src='https://ui-avatars.com/api/?name=LL&background=fff&color=0f172a'">
                             <span class="ml-3 font-serif text-3xl font-bold tracking-tight italic">Lake Lucerne</span>
                         </a>
                         <p class="text-gray-400 leading-relaxed text-sm">Providing exceptional dental care for the Orlando community for over 50 years. Our commitment is to your smile and long-term oral health.</p>
