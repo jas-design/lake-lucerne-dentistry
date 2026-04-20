@@ -1,1 +1,2 @@
-# Placeholder for images. Please upload your logo.png here.
+Please place your logo.png file in this directory. 
+The website is currently referencing '/images/logo.png'.
