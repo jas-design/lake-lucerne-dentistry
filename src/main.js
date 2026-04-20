@@ -10,14 +10,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Header Scroll Effect
     const header = document.querySelector('header');
-    if (header) {
+    const mainNav = document.getElementById('main-nav');
+    const topBar = document.getElementById('top-bar');
+    
+    if (header && mainNav) {
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('bg-white', 'py-3', 'shadow-md');
-                header.classList.remove('py-5');
+            if (window.scrollY > 100) {
+                mainNav.classList.add('py-2', 'shadow-lg');
+                mainNav.classList.remove('py-4');
+                if (topBar) {
+                    topBar.classList.add('h-0', 'opacity-0', 'overflow-hidden');
+                    topBar.classList.remove('py-2', 'opacity-100');
+                }
             } else {
-                header.classList.remove('bg-white', 'py-3', 'shadow-md');
-                header.classList.add('py-5');
+                mainNav.classList.remove('py-2', 'shadow-lg');
+                mainNav.classList.add('py-4');
+                if (topBar) {
+                    topBar.classList.remove('h-0', 'opacity-0', 'overflow-hidden');
+                    topBar.classList.add('py-2', 'opacity-100');
+                }
             }
         });
     }
@@ -119,7 +130,109 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1500);
         });
     }
+
+    // Testimonial Carousel
+    initTestimonialCarousel();
+
+    // Hero Slider
+    initHeroSlider();
 });
+
+function initHeroSlider() {
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-dot');
+    if (slides.length < 2) return;
+
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            if (i === index) {
+                slide.classList.remove('opacity-0', 'z-0');
+                slide.classList.add('opacity-100', 'z-10');
+            } else {
+                slide.classList.remove('opacity-100', 'z-10');
+                slide.classList.add('opacity-0', 'z-0');
+            }
+        });
+
+        dots.forEach((dot, i) => {
+            if (i === index) {
+                dot.classList.add('bg-primary');
+                dot.classList.remove('bg-slate-300');
+            } else {
+                dot.classList.remove('bg-primary');
+                dot.classList.add('bg-slate-300');
+            }
+        });
+        currentSlide = index;
+    }
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => showSlide(i));
+    });
+
+    setInterval(() => {
+        let next = (currentSlide + 1) % slides.length;
+        showSlide(next);
+    }, 6000);
+}
+
+function initTestimonialCarousel() {
+    const track = document.getElementById('testimonial-track');
+    const dotsContainer = document.getElementById('testimonial-dots');
+    
+    if (!track || !dotsContainer) return;
+
+    const slides = Array.from(track.children);
+    let currentIndex = 0;
+
+    // Responsive dots: On mobile we want 1 slide per view, on desktop 2
+    function getDotsCount() {
+        return window.innerWidth >= 768 ? Math.ceil(slides.length / 2) : slides.length;
+    }
+
+    function createDots() {
+        dotsContainer.innerHTML = '';
+        const count = getDotsCount();
+        for (let i = 0; i < count; i++) {
+            const dot = document.createElement('div');
+            dot.className = `dot w-2.5 h-2.5 rounded-full cursor-pointer transition-all ${i === 0 ? 'bg-primary border-2 border-primary' : 'bg-gray-200'}`;
+            dot.addEventListener('click', () => updateCarousel(i));
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    function updateCarousel(index) {
+        currentIndex = index;
+        const isDesktop = window.innerWidth >= 768;
+        const offset = currentIndex * (isDesktop ? 100 : 100); 
+        // Actually on mobile each is 100%, on desktop 100% moves 2 slides (since container is max-w and slides are 50%)
+        track.style.transform = `translateX(-${offset}%)`;
+        
+        // Update dots
+        const dots = dotsContainer.querySelectorAll('.dot');
+        dots.forEach((dot, i) => {
+            if (i === currentIndex) {
+                dot.classList.add('bg-primary', 'border-primary');
+                dot.classList.remove('bg-gray-200');
+            } else {
+                dot.classList.remove('bg-primary', 'border-primary');
+                dot.classList.add('bg-gray-200');
+            }
+        });
+    }
+
+    createDots();
+    window.addEventListener('resize', createDots);
+
+    // Auto-slide
+    setInterval(() => {
+        const count = getDotsCount();
+        let nextIndex = (currentIndex + 1) % count;
+        updateCarousel(nextIndex);
+    }, 5000);
+}
 
 function injectSharedComponents() {
     const headerPlaceholder = document.getElementById('header-placeholder');
@@ -135,8 +248,8 @@ function injectSharedComponents() {
 
     if (headerPlaceholder) {
         headerPlaceholder.innerHTML = `
-        <header class="fixed w-full z-50 transition-all duration-300" id="main-header">
-            <div class="bg-accent text-white py-2 hidden lg:block border-b border-white/10">
+        <header class="fixed w-full z-50 transition-all duration-500" id="main-header">
+            <div id="top-bar" class="bg-accent text-white py-2 hidden lg:block border-b border-white/10 transition-all duration-500">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-[13px] font-medium">
                     <div class="flex items-center space-x-8">
                         <a href="mailto:info@lakelucernedentistry.com" class="flex items-center hover:text-primary transition-all"><i data-lucide="mail" class="w-3.5 h-3.5 mr-2"></i> info@lakelucernedentistry.com</a>
@@ -149,7 +262,7 @@ function injectSharedComponents() {
                     </div>
                 </div>
             </div>
-            <nav class="bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300 py-4" id="main-nav">
+            <nav class="bg-white/95 backdrop-blur-md shadow-sm transition-all duration-500 py-4" id="main-nav">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between items-center h-16">
                         <a href="index.html" class="flex items-center">
