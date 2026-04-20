@@ -262,7 +262,7 @@ function injectSharedComponents() {
                     </div>
                 </div>
             </div>
-            <nav class="bg-white/95 backdrop-blur-md shadow-sm transition-all duration-500 py-4" id="main-nav">
+            <nav class="bg-white shadow-sm transition-all duration-500 py-4" id="main-nav">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between items-center h-16">
                         <a href="index.html" class="flex items-center">
