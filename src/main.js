@@ -68,13 +68,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Close all
             document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
-            document.querySelectorAll('.lucide-minus').forEach(m => m ? .classList.add('hidden'));
-            document.querySelectorAll('.lucide-plus').forEach(p => p ? .classList.remove('hidden'));
+            document.querySelectorAll('.lucide-minus').forEach(m => m ?.classList.add('hidden'));
+            document.querySelectorAll('.lucide-plus').forEach(p => p ?.classList.remove('hidden'));
 
             if (!isOpen) {
                 content.classList.remove('hidden');
-                iconPlus ? .classList.add('hidden');
-                iconMinus ? .classList.remove('hidden');
+                iconPlus ?.classList.add('hidden');
+                iconMinus ?.classList.remove('hidden');
             }
         });
     });
