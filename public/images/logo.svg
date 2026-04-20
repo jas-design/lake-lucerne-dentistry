@@ -1,0 +1,14 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer circle for elegance -->
+  <circle cx="100" cy="100" r="90" stroke="#5A5A40" stroke-width="2" stroke-dasharray="8 4" opacity="0.3"/>
+  
+  <!-- Stylized Tooth Shape -->
+  <path d="M100 45C80 45 65 55 65 85C65 115 75 125 75 150C75 155 80 160 85 160C90 160 95 155 95 150C95 140 100 135 100 135C100 135 105 140 105 150C105 155 110 160 115 160C120 160 125 155 125 150C125 125 135 115 135 85C135 55 120 45 100 45Z" fill="#5A5A40"/>
+  
+  <!-- Lake Reflection/Wave Elements -->
+  <path d="M55 100C75 90 125 90 145 100" stroke="#A4C77B" stroke-width="4" stroke-linecap="round"/>
+  <path d="M65 115C85 108 115 108 135 115" stroke="#D1D448" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Subtle Highlight -->
+  <path d="M85 65C85 65 75 75 75 85" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.2"/>
+</svg>
