@@ -100,7 +100,7 @@ export default function About() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
              {[
-               { name: 'Dr. Katherine Miller', role: 'Chief Cosmetic Dentist', img: 'https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=2070' },
+               { name: 'Dr. Katherine Miller', role: 'Chief Cosmetic Dentist', img: 'https://images.unsplash.com/photo-1674775372058-c4c8813c6611?auto=format&fit=crop&q=80&w=2070' },
                { name: 'Dr. James Wilson', role: 'Implant Specialist', img: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=2070' },
                { name: 'Dr. Elena Rodriguez', role: 'Restorative Dentist', img: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=2070' }
              ].map((member, i) => (

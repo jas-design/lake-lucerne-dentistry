@@ -9,6 +9,7 @@ const allServices = [
     description: 'Transform your smile with veneers, bonding, and professional whitening tailored to your aesthetic goals.',
     features: ['Porcelain Veneers', 'Teeth Whitening', 'Dental Bonding', 'Gum Contouring'],
     icon: Sparkles,
+    src: 'https://images.unsplash.com/photo-1684607632910-5afbe351a2cd?auto=format&fit=crop&q=80&w=1000',
   },
   {
     title: 'Dental Implants',
@@ -16,6 +17,7 @@ const allServices = [
     description: 'Permanent, natural-looking solutions for missing teeth using advanced titanium post technology.',
     features: ['Single Tooth Implants', 'Multiple Tooth Replacement', 'All-on-4® Solutions', 'Bone Grafting'],
     icon: ShieldCheck,
+    src: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&q=80&w=1000',
   },
   {
     title: 'Smile Makeovers',
@@ -23,6 +25,7 @@ const allServices = [
     description: 'A comprehensive combination of cosmetic treatments designed to completely revitalize your appearance.',
     features: ['Digital Smile Design', 'Comprehensive Planning', 'Full Arch Rehabilitation', 'Mock-up Previews'],
     icon: Zap,
+    src: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=1000',
   },
   {
     title: 'Specialized Treatments',
@@ -30,6 +33,7 @@ const allServices = [
     description: 'Advanced restorative and periodontal care using the latest clinical technologies.',
     features: ['Invisalign® Clear Aligners', 'Laser Dentistry', 'TMJ Therapy', 'Sleep Apnea Solutions'],
     icon: Microscope,
+    src: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&q=80&w=1000',
   },
 ];
 
@@ -91,7 +95,7 @@ export default function Services() {
                         <div className="flex-1 overflow-hidden rounded-[40px] shadow-2xl relative">
                             <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
                             <img 
-                                src={`https://images.unsplash.com/photo-1629${909+index}613654-2871b8868bca?auto=format&fit=crop&q=80&w=1000`} 
+                                src={service.src} 
                                 alt={service.title} 
                                 className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                             />

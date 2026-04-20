@@ -46,7 +46,7 @@ const faqItems = [
 
 const team = [
   { name: 'Dr. Howard Holmes', role: 'Chief Dentist', img: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=600' },
-  { name: 'Dr. Ella Thompson', role: 'Orthodontist', img: 'https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=600' },
+  { name: 'Dr. Ella Thompson', role: 'Orthodontist', img: 'https://images.unsplash.com/photo-1674775372058-c4c8813c6611?auto=format&fit=crop&q=80&w=600' },
   { name: 'Dr. Vincent Cooper', role: 'Endodontist', img: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=600' },
   { name: 'Dr. Danielle Bryant', role: 'Periodontist', img: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=600' },
 ];
@@ -101,7 +101,7 @@ export default function Home() {
                {/* Main Image with clipped border style like reference */}
                <div className="relative mx-auto h-[500px] w-full max-w-md overflow-hidden rounded-[20%_20%_20%_20%] border-[20px] border-white shadow-2xl lg:h-full lg:max-w-none">
                   <img 
-                    src="https://images.unsplash.com/photo-1629909613654-2871b8868bca?auto=format&fit=crop&q=80&w=2070" 
+                    src="https://images.unsplash.com/photo-1681939282781-341ac4f61996?auto=format&fit=crop&q=80&w=2070" 
                     alt="Smile" 
                     className="h-full w-full object-cover"
                   />
@@ -447,7 +447,7 @@ export default function Home() {
               {[1, 2, 3].map((i) => (
                 <div key={i} className="group rounded-[32px] border border-gray-100 bg-white shadow-sm overflow-hidden transition-all hover:shadow-2xl">
                    <div className="h-60 overflow-hidden relative">
-                      <img src={`https://images.unsplash.com/photo-1629${909+i}613654-2871b8868bca?auto=format&fit=crop&q=80&w=600`} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Blog" />
+                      <img src={`https://images.unsplash.com/photo-1600170311833-c2cf5280ce49?auto=format&fit=crop&q=80&w=600`} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Blog" />
                       <div className="absolute bottom-4 left-4 bg-primary text-white text-[10px] font-bold px-4 py-2 rounded-lg">24 Oct 2025</div>
                    </div>
                    <div className="p-8">

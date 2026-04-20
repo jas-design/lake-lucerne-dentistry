@@ -60,7 +60,7 @@ export default function Header() {
             {/* Fallback to text logo if image not found, but we'll include the tag */}
             <div className="h-12 w-auto">
               <img 
-                src={`${import.meta.env.BASE_URL}images/logo.svg`}
+                src={`${import.meta.env.BASE_URL}images/logo.png`}
                 alt="Lake Lucerne Cosmetic and Implant Dentistry" 
                 className="h-full w-auto object-contain"
                 onError={(e) => {
